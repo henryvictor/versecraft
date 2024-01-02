@@ -428,6 +428,7 @@ body {
     #main {
         width: 100%;
         order: 1;
+        background-color: red;
         & >div {
             width: 100%;
             & >div {
