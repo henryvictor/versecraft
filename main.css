@@ -404,7 +404,7 @@ body {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
     body {
         width: 100vw;
         padding: 0px;
@@ -425,7 +425,7 @@ body {
     #main {
         width: 100%;
         order: 1;
-        background-color: green;
+        background-color: red;
         & >div {
             width: 100%;
             & >div {
