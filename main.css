@@ -458,7 +458,6 @@ body {
         padding: 0px;
         margin: 0px;
         font-family: Arial, Helvetica, sans-serif;
-        /*box-sizing: border-box;*/
     }
     main {
         padding: 16px;
@@ -470,6 +469,7 @@ body {
         flex-wrap: wrap;
         gap: 24px;
         background-color: red;
+        box-sizing: border-box;
     }
     #main {
         width: 100%;
