@@ -469,6 +469,7 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         gap: 24px;
+        background-color: red;
     }
     #main {
         width: 100%;
