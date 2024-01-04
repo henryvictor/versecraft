@@ -1,17 +1,124 @@
-let count1 = document.getElementById('count1'); 
-let text1 = document.getElementById('text1'); 
-
 const titreField = document.getElementById('titre-field');
-let textFields = document.getElementsByClassName("text-field");
 let main = document.getElementById("main");
 
-const fields = document.querySelectorAll('.text-field');
+//let textFields = document.getElementsByClassName("text-field");
+//let fields = document.querySelectorAll('.text-field');
+//let counts = document.querySelectorAll('.count');
+initializeFields();
 
-const counts = document.querySelectorAll('.count');
+//Fonction pour initialiser les champs et les counts
+function initializeFields() {
+    textFields = document.getElementsByClassName("text-field");
+    fields = document.querySelectorAll('.text-field');
+    counts = document.querySelectorAll('.count');
+    console.log("fields are set");
+    fields.forEach(field => {
+        field.addEventListener('keydown', function handleClick() {
+            countAll(field);
+        });
+    });
+}
+
+//Format select
+let formats = ["Sonnet","Balade"];
+let selectFormat = document.getElementById("select-format");
+
+selectFormat.addEventListener('change', function () {
+    console.log(this.selectedIndex);
+    if (this.selectedIndex == 0) {
+        console.log("sonnet sélectionné");
+        main.innerHTML = `<h4 id="titre-field" contenteditable="true">Titre de votre poème</h4> 
+        <div>
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <br />
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <br />
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <br />
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div>
+            </div>`;
+
+            initializeFields();
+    }
+    if (this.selectedIndex == 1) {
+        console.log("balade sélectionné");
+        main.innerHTML = `<h4 id=\"titre-field\" contenteditable=\"true\">Titre de votre poème</h4>
+        <div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>`;
+
+            initializeFields();
+    }
+});
 
 //Partager via Twitter
 const buttonShareTwitter = document.getElementsByClassName('twitter-hashtag-button')[0];
-//
 
 window.addEventListener("load", () => {
     tweetButton1 = document.getElementById('twitter-widget-0');
@@ -31,7 +138,7 @@ tweetButton.addEventListener('click', () => {
     buttonShareTwitter.data = poemeTwitter;*/
 });
 
-
+/*
 fields.forEach(field => {
     field.addEventListener("change", () => {
         let poem = joinPoem();
@@ -44,7 +151,7 @@ fields.forEach(field => {
         console.log(tweetButton2.getAttribute("url"));
 
     })
-});
+});*/
 
 //Toggle font serif/sans serif
 const buttonSansSerif = document.getElementById('toggle-sans-serif');
@@ -110,17 +217,18 @@ function toggleTheme(toggleThemeCouleur) {
     }
 }
 
-//Effacer le placeholder du titre à la saisie
-titreField.addEventListener('keydown', () => {
-    titreField.value = "a";
+//Effacer le placeholder du titre à la saisie, à déclencher une seule fois, ne marche pas en l'état
+//+ désactiver les touches qui ne sont pas des lettres
+titreField.addEventListener('keydown', (e) => {
+    //titreField.innerText = e.key;
 });
 
-//Remettre le placeholder si le titre est vide quand on quitte l'édition
-titreField.addEventListener('change', (e) => {
+//Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
+titreField.addEventListener('keyDown', (e) => {
     console.log(e.code);
-    value = titreField.value;
+    value = titreField.innerText;
     if (value == "") {
-        titreField.value = "Titre de votre poème";
+        titreField.innerText = "Titre de votre poème";
     }
 });
 
@@ -188,17 +296,6 @@ function saveAs(uri, filename) {
 const buttonCopy = document.getElementById('copy-text');
 const buttonCopyText = document.getElementById('copy-text-text');
 buttonCopy.addEventListener('click', () => {
-    /*fields.forEach(field => {
-        content = field.innerText;
-    });
-    poeme = [];
-    for (let i = 0; i < fields.length; i++) {
-        if (!fields[i].value == "") {
-            poeme.push(fields[i].value);
-        }
-    }
-    poeme.unshift(document.getElementById('titre-field').innerText);
-    let poemeEntier = poeme.join(" ");*/
     poemeEntier = joinPoem();
     navigator.clipboard.writeText(poemeEntier);
     
@@ -207,6 +304,7 @@ buttonCopy.addEventListener('click', () => {
         buttonCopyText.innerText = 'Copier le texte';
     }, 1000);
 });
+
 
 function joinPoem() {
     fields.forEach(field => {
@@ -248,41 +346,7 @@ function color() {
     });
 }
 
-
- 
-function count_words() { 
-    let text = text1.value; 
-    if (text !== "") { 
-        const myArray = text.split(" "); 
- 
-        let syllabes = 0; 
-        for (let i = 0; i < myArray.length; i++) { 
-            console.log(myArray[i]); 
-            syllabes += new_count(myArray[i]); 
-        } 
-        count1.innerHTML = syllabes; 
-        console.log(syllabes); 
-    } 
-    else if (text == "") { 
-        myArray = []; 
-        console.log("array vide :"); 
-        console.log(myArray); 
-        syllabes = 0; 
-        count1.innerHTML = syllabes; 
-    } 
-} 
- 
-function new_count(word) { 
-    word = word.toLowerCase();                                     //word.downcase! 
-    if(word.length <= 3) { return 1; }                             //return 1 if word.length <= 3 
-      word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');   //word.sub!(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '') 
-      word = word.replace(/^y/, '');                                 //word.sub!(/^y/, '') 
-      word = word.replace(/,/g, '');
-      console.log(word);
-      return word.match(/[aeiouy]{1,2}/g).length;                    //word.scan(/[aeiouy]{1,2}/).size 
-}
-
-
+//Comptage des syllabes
 function countAll(field) {
     let texte = field.value;
     let voyelle = "aàâeëéèêiïouùy";

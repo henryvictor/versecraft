@@ -284,9 +284,6 @@ body {
 .light {
     color: red;
     background: var(--light-main-bg-color) !important;
-    & nav {
-
-    }
     & #banner-2 {
         height: 100%;
         flex-basis: auto;
