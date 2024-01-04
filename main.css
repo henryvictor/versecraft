@@ -439,6 +439,7 @@ body {
         }
     }
     #side {
+        min-width: 100%;
         max-width: 100%;
         height: auto;
         order: 2;
@@ -487,6 +488,7 @@ body {
         }
     }
     #side {
+        min-width: 100%;
         max-width: 100%;
         height: auto;
         order: 2;
