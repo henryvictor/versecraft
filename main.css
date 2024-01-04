@@ -403,7 +403,7 @@ body {
     font-family: serif;
 }
 
-/* Téléphones max width 375px 
+/* Téléphones max width 375px */
 @media only screen and (max-device-width: 375px) {
     body {
         width: 100vw;
@@ -447,9 +447,10 @@ body {
         }
     }
     #banner-2 {
+        display: none;
         order: 3;
     }
-}*/
+}
 
 /* Iphones (à partir du X) */
 @media only screen and (device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
@@ -494,6 +495,7 @@ body {
         }
     }
     #banner-2 {
+        display: none;
         order: 3;
     }
 }

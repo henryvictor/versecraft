@@ -9,13 +9,6 @@ const fields = document.querySelectorAll('.text-field');
 
 const counts = document.querySelectorAll('.count');
 
-
-//Test device dimensions
-var w = window.innerWidth;
-var h = window.innerHeight;
-var x = document.getElementById("data");
-x.innerHTML = "Browser width: " + w + ", height: " + h + ".";
-
 //Partager via Twitter
 const buttonShareTwitter = document.getElementsByClassName('twitter-hashtag-button')[0];
 //
