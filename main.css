@@ -452,7 +452,7 @@ body {
 }
 
 /* Iphones (à partir du X) */
-@media (device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+@media (device-width: 375px) {
     body {
         width: 100vw;
         padding: 0px;
