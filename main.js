@@ -1,4 +1,4 @@
-const titreField = document.getElementById('titre-field');
+//const titreField = document.getElementById('titre-field');
 let main = document.getElementById("main");
 
 //let textFields = document.getElementsByClassName("text-field");
@@ -8,6 +8,7 @@ initializeFields();
 
 //Fonction pour initialiser les champs et les counts
 function initializeFields() {
+    titreField = document.getElementById('titre-field');
     textFields = document.getElementsByClassName("text-field");
     fields = document.querySelectorAll('.text-field');
     counts = document.querySelectorAll('.count');
@@ -16,6 +17,38 @@ function initializeFields() {
         field.addEventListener('keydown', function handleClick() {
             countAll(field);
         });
+    });
+
+    //Effacer le placeholder du titre à la saisie, à déclencher une seule fois, ne marche pas en l'état
+    //+ désactiver les touches qui ne sont pas des lettres
+    titreField.addEventListener('keydown', (e) => {
+        //titreField.innerText = e.key;
+    });
+
+    //Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
+    titreField.addEventListener('keyDown', (e) => {
+        console.log(e.code);
+        value = titreField.innerText;
+        if (value == "") {
+            titreField.innerText = "Titre de votre poème";
+        }
+    });
+
+    //Empêcher saut de ligne dans le titre
+    titreField.addEventListener('keypress', (e) => {
+        console.log(e.code);
+        if (e.code === "Enter") {
+            e.preventDefault();
+        }
+    });
+
+    //Limite de caractères dans le titre
+    titreField.addEventListener('keypress', (e) => {
+        let limite = 30;
+        let titleLenght = titreField.innerText.length;
+        if (titleLenght > limite) {
+            e.preventDefault();
+        }
     });
 }
 
@@ -217,38 +250,6 @@ function toggleTheme(toggleThemeCouleur) {
     }
 }
 
-//Effacer le placeholder du titre à la saisie, à déclencher une seule fois, ne marche pas en l'état
-//+ désactiver les touches qui ne sont pas des lettres
-titreField.addEventListener('keydown', (e) => {
-    //titreField.innerText = e.key;
-});
-
-//Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
-titreField.addEventListener('keyDown', (e) => {
-    console.log(e.code);
-    value = titreField.innerText;
-    if (value == "") {
-        titreField.innerText = "Titre de votre poème";
-    }
-});
-
-//Empêcher saut de ligne dans le titre
-document.getElementById('titre-field').addEventListener('keypress', (e) => {
-    console.log(e.code);
-    if (e.code === "Enter") {
-        e.preventDefault();
-    }
-});
-
-//Limite de caractères dans le titre
-document.getElementById('titre-field').addEventListener('keypress', (e) => {
-    let limite = 30;
-    let titleLenght = document.getElementById('titre-field').innerText.length;
-    if (titleLenght > limite) {
-        e.preventDefault();
-    }
-});
-
 //Exporter en png
 const buttonExportPng = document.getElementById('export-png');
 const exportZone = document.getElementById('main');
@@ -316,17 +317,17 @@ function joinPoem() {
             poeme.push(fields[i].value);
         }
     }
-    poeme.unshift(document.getElementById('titre-field').innerText);
+    poeme.unshift(titreField.innerText);
     let poemeEntier = poeme.join(" ");
     return poemeEntier
 }
 
-
+/*
 fields.forEach(field => {
     field.addEventListener('keydown', function handleClick() {
         countAll(field);
     });
-});
+});*/
 
 //Appelée pour colorer le compteur de syllabes en rouge si le total dépasse 8 
 function color() { 
