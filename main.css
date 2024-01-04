@@ -472,7 +472,7 @@ body {
         box-sizing: border-box;
     }
     #main {
-        width: fit-content;
+        width: calc(100vw - 32px);
         height: auto;
         order: 1;
         & #titre-field {
