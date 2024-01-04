@@ -404,7 +404,7 @@ body {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-device-width: 767px) {
+@media only screen and (max-device-width: 375px) {
     body {
         width: 100vw;
         padding: 0px;
