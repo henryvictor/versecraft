@@ -472,7 +472,7 @@ body {
         box-sizing: border-box;
     }
     #main {
-        width: 100%;
+        max-width: 100%;
         height: auto;
         order: 1;
         & #titre-field {
