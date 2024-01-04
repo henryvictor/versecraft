@@ -468,12 +468,11 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         gap: 24px;
-        background-color: rgb(38, 0, 255);
         box-sizing: border-box;
     }
     #main {
         width: calc(100vw - 32px);
-        height: auto;
+        height: fit-content;
         order: 1;
         & #titre-field {
             width: 90%;
@@ -487,8 +486,7 @@ body {
         }
     }
     #side {
-        min-width: 100%;
-        max-width: 100%;
+        width: calc(100vw - 32px);
         height: auto;
         order: 2;
         & #banner {
