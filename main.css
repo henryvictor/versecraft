@@ -452,7 +452,7 @@ body {
 }
 
 /* Iphones (à partir du X) */
-@media only screen and (max-width: 720px) {
+@media (device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
     body {
         width: 100vw;
         padding: 0px;
