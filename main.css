@@ -403,6 +403,7 @@ body {
     font-family: serif;
 }
 
+/* Téléphones max width 375px */
 @media only screen and (max-device-width: 375px) {
     body {
         width: 100vw;
@@ -450,7 +451,7 @@ body {
     }
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* Iphones (à partir du X) */
 @media only screen and (min-device-width: 375px) 
                    and (max-device-width: 812px) 
                    and (-webkit-min-device-pixel-ratio: 3)
