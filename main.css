@@ -452,7 +452,7 @@ body {
 }
 
 /* Iphones (à partir du X) */
-@media (device-width: 375px) {
+@media (device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
     body {
         width: 100vw;
         padding: 0px;
@@ -468,7 +468,7 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         gap: 24px;
-        background-color: red;
+        background-color: rgb(38, 0, 255);
         box-sizing: border-box;
     }
     #main {
