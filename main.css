@@ -475,7 +475,6 @@ body {
         width: 100%;
         height: auto;
         order: 1;
-        box-sizing: border-box;
         & #titre-field {
             width: 90%;
             box-sizing: border-box;
