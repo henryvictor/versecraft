@@ -52,7 +52,7 @@ function initializeFields() {
     });
 }
 
-//Format select
+//Select format
 let formats = ["Sonnet","Balade"];
 let selectFormat = document.getElementById("select-format");
 

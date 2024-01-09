@@ -3,6 +3,11 @@
     --h4: 16px;
     --p: 16px;
 
+    /* indifférent */
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+
     /* Light theme*/
     --light-main-bg-color: rgb(235, 235, 235);
     --light-secondary-bg-color: rgb(255, 255, 255);
@@ -27,6 +32,12 @@
     --dark-border-primary-color: rgba(255, 255, 255, 0.25);
     --dark-border-primary-color-light: rgba(0, 0, 0, 0.25);
     --dark-button-overlay-color: rgba(0, 0, 0, 0.04);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -96,6 +107,56 @@ body {
             }
         }
         & >div {
+            & >div {
+                & #select-format {
+                    /*appearance: none;
+                    background-color: transparent;
+                    border: none;
+                    padding: 0 1em 0 0;
+                    margin: 0;
+                    width: 100%;
+                    font-family: inherit;
+                    font-size: inherit;
+                    cursor: inherit;
+                    line-height: inherit;
+                    width: 100%;
+                    min-width: 15ch;
+                    max-width: 30ch;
+                    border: 1px solid var(--select-border);
+                    border-radius: 0.25em;
+                    padding: 0.25em 0.5em;
+                    font-size: 1.25rem;
+                    cursor: pointer;
+                    line-height: 1.1;
+                    background-color: #fff;
+                    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+                    display: grid;
+                    grid-template-areas: "select";*/
+
+                    /*all: unset;*/
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    font-family: inherit;
+                    cursor: inherit;
+                    width: 100%;
+                    padding: 8px 12px 8px 12px;
+                    border: 1px solid var(--dark-border-primary-color-light);
+                    border-radius: 4px;
+                    background-image:
+                        linear-gradient(to right, var(--dark-text-primary-color), var(--dark-text-primary-color));
+                    /*background-color: var(--dark-text-primary-color);*/
+                    color: var(--dark-text-primary-color-light);
+                    font-weight: 500;
+                  }
+                  & #select-format:hover {
+                    background-image:
+                    linear-gradient(to right, var(--dark-button-overlay-color), var(--dark-button-overlay-color)),
+                    linear-gradient(to right, var(--dark-text-primary-color), var(--dark-text-primary-color));
+                  }
+            }
             & >h3 {
                 margin-top: 8px;
                 margin-bottom: 0px;
@@ -421,6 +482,7 @@ body {
     #main {
         width: 100%;
         height: auto;
+        padding-bottom: 24px;
         order: 1;
         box-sizing: border-box;
         & #titre-field {
@@ -435,10 +497,11 @@ body {
         }
     }
     #side {
-        min-width: 100%;
-        max-width: 100%;
+        width: 100%;
+        height: auto;
         height: auto;
         order: 2;
+        box-sizing: border-box;
         & #banner {
             height: 0px;
         }
