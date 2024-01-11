@@ -314,6 +314,7 @@ buttonExportPng.addEventListener('click', function() {
 function toggleBorders() {
     fields.forEach(field => {
         field.classList.toggle("no-border");
+        console.log(field.classList);
     });
 }
 
