@@ -525,7 +525,8 @@ body {
     }
     #side {
         min-width: calc(100vw - 32px);
-        height: auto;
+        /*height: auto;*/
+        min-height: fit-content;
         order: 2;
         & #banner {
             height: 0px;
