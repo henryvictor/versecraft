@@ -255,9 +255,11 @@ function toggleFont(toggle) {
     }
 }
 
-//Toggle thème
+//Toggle thème et favicon
 const buttonCouleur1 = document.getElementById('toggle-couleur-1');
 const buttonCouleur2 = document.getElementById('toggle-couleur-2');
+
+const faviconTag = document.getElementById('favicon-tag');
 
 let toggleThemeCouleur = 1;
 buttonCouleur1.disabled = true;
@@ -278,12 +280,14 @@ function toggleTheme(toggleThemeCouleur) {
         buttonCouleur2.disabled = false;
         document.body.classList.remove('light');
         document.body.classList.add('dark');
+        faviconTag.setAttribute("href", "/assets/favicon_dark.svg");
     }
     if (toggleThemeCouleur == 2) {
         buttonCouleur1.disabled = false;
         buttonCouleur2.disabled = true;
         document.body.classList.remove('dark');
         document.body.classList.add('light');
+        faviconTag.setAttribute("href", "/assets/favicon_light.svg");
     }
 }
 
