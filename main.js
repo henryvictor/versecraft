@@ -1,6 +1,8 @@
 //const titreField = document.getElementById('titre-field');
 let main = document.getElementById("main");
 
+let checkSyllabes = 8;
+
 //let textFields = document.getElementsByClassName("text-field");
 //let fields = document.querySelectorAll('.text-field');
 //let counts = document.querySelectorAll('.count');
@@ -171,6 +173,51 @@ tweetButton.addEventListener('click', () => {
     buttonShareTwitter.data = poemeTwitter;*/
 });
 
+//Change syllabes count limit
+const buttonSyllabes8 = document.getElementById('syllabes8');
+const buttonSyllabes10 = document.getElementById('syllabes10');
+const buttonSyllabes12 = document.getElementById('syllabes12');
+
+let changeSyllabes = 1;
+buttonSyllabes8.disabled = true;
+
+buttonSyllabes8.addEventListener('click', () => {
+    changeSyllabes = 1;
+    changeSyllabesFunc(changeSyllabes);
+});
+
+buttonSyllabes10.addEventListener('click', () => {
+    changeSyllabes = 2;
+    changeSyllabesFunc(changeSyllabes);
+});
+
+buttonSyllabes12.addEventListener('click', () => {
+    changeSyllabes = 3;
+    changeSyllabesFunc(changeSyllabes);
+});
+
+
+function changeSyllabesFunc(changeSyllabes) {
+    if (changeSyllabes == 1) {
+        buttonSyllabes8.disabled = true;
+        buttonSyllabes10.disabled = false;
+        buttonSyllabes12.disabled = false;
+        checkSyllabes = 8;
+    }
+    if (changeSyllabes == 2) {
+        buttonSyllabes8.disabled = false;
+        buttonSyllabes10.disabled = true;
+        buttonSyllabes12.disabled = false;
+        checkSyllabes = 10;
+    }
+    if (changeSyllabes == 3) {
+        buttonSyllabes8.disabled = false;
+        buttonSyllabes10.disabled = false;
+        buttonSyllabes12.disabled = true;
+        checkSyllabes = 12;
+    }
+}
+
 /*
 fields.forEach(field => {
     field.addEventListener("change", () => {
@@ -208,13 +255,11 @@ function toggleFont(toggle) {
         buttonSansSerif.disabled = true;
         buttonSerif.disabled = false;
         document.getElementById('main').classList.remove('serif');
-        console.log('passage en sans serif');
     }
     if (toggle == false) {
         buttonSansSerif.disabled = false;
         buttonSerif.disabled = true;
         document.getElementById('main').classList.add('serif');
-        console.log('passage en serif');
     }
 }
 
@@ -432,7 +477,7 @@ function countAll(field) {
     }
 
     //Coloration rouge si nombre de voyelles > 8
-    if (resultatSomme > 8) {
+    if (resultatSomme > checkSyllabes) {
         //Si la bordure n'était pas déjà rouge (si la classe red-border n'est PAS dans la liste), toggle la classe pour la passer en rouge, ne fait rien sinon
         if (!field.classList.contains("red-border")) {
             field.classList.toggle("red-border");
