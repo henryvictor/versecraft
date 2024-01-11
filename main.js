@@ -14,11 +14,11 @@ function initializeFields() {
     textFields = document.getElementsByClassName("text-field");
     fields = document.querySelectorAll('.text-field');
     counts = document.querySelectorAll('.count');
-    console.log("fields are set");
     fields.forEach(field => {
         field.addEventListener('keydown', function handleClick() {
             countAll(field);
         });
+        countAll(field);
     });
 }
 
@@ -162,17 +162,6 @@ window.addEventListener("load", () => {
     console.log(tweetButton2);
 });
 
-tweetButton.addEventListener('click', () => {
-    /*let poemeTwitter;
-    poemeTwitter = joinPoem();
-    console.log(tweetButton);
-    console.log("clic sur share tweet");*/
-    let test = tweetButton.getAttribute('text');
-    console.log(test);
-    /*buttonShareTwitter.setAttribute("data-text", poemeTwitter);
-    buttonShareTwitter.data = poemeTwitter;*/
-});
-
 //Change syllabes count limit
 const buttonSyllabes8 = document.getElementById('syllabes8');
 const buttonSyllabes10 = document.getElementById('syllabes10');
@@ -203,18 +192,21 @@ function changeSyllabesFunc(changeSyllabes) {
         buttonSyllabes10.disabled = false;
         buttonSyllabes12.disabled = false;
         checkSyllabes = 8;
+        initializeFields();
     }
     if (changeSyllabes == 2) {
         buttonSyllabes8.disabled = false;
         buttonSyllabes10.disabled = true;
         buttonSyllabes12.disabled = false;
         checkSyllabes = 10;
+        initializeFields();
     }
     if (changeSyllabes == 3) {
         buttonSyllabes8.disabled = false;
         buttonSyllabes10.disabled = false;
         buttonSyllabes12.disabled = true;
         checkSyllabes = 12;
+        initializeFields();
     }
 }
 
@@ -467,7 +459,7 @@ function countAll(field) {
             resultatSomme += "\n";
     }
 
-    const container = field.closest('div');
+    let container = field.closest('div');
 
     if (container) {
         const countSpan = container.querySelector('.count');
@@ -478,6 +470,34 @@ function countAll(field) {
     }
 
     //Coloration rouge si nombre de voyelles > 8
+    if (resultatSomme > checkSyllabes) {
+        //Si la bordure n'était pas déjà rouge (si la classe red-border n'est PAS dans la liste), toggle la classe pour la passer en rouge, ne fait rien sinon
+        if (!field.classList.contains("red-border")) {
+            field.classList.toggle("red-border");
+            console.log("toggle red");
+        }
+    }
+    else {
+        //Si la bordure était rouge, toggle la classe pour la retirer, ne fait rien sinon
+        if (field.classList.contains("red-border")) {
+            field.classList.toggle("red-border");
+            console.log("toggle normal");
+        }
+
+    }
+}
+
+function colorationRouge(resultatSomme) {
+    let container = field.closest('div');
+
+    if (container) {
+        const countSpan = container.querySelector('.count');
+
+        if (countSpan) {
+            countSpan.textContent = resultatSomme;
+        }
+    }
+
     if (resultatSomme > checkSyllabes) {
         //Si la bordure n'était pas déjà rouge (si la classe red-border n'est PAS dans la liste), toggle la classe pour la passer en rouge, ne fait rien sinon
         if (!field.classList.contains("red-border")) {
