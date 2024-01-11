@@ -62,7 +62,7 @@ selectFormat.addEventListener('change', function () {
     console.log(this.selectedIndex);
     if (this.selectedIndex == 0) {
         console.log("sonnet sélectionné");
-        main.innerHTML = `<h4 id="titre-field" contenteditable="true">Titre de votre poème</h4> 
+        main.innerHTML = `<input type="text" id="titre-field" placeholder="Titre de votre poème">
         <div>
             <div> 
                 <input type="text" class="text-field"> 
@@ -129,7 +129,7 @@ selectFormat.addEventListener('change', function () {
     }
     if (this.selectedIndex == 1) {
         console.log("balade sélectionné");
-        main.innerHTML = `<h4 id=\"titre-field\" contenteditable=\"true\">Titre de votre poème</h4>
+        main.innerHTML = `<input type="text" id="titre-field" placeholder="Titre de votre poème">
         <div>
             <div> 
                 <input type=\"text\" class=\"text-field\"> 
