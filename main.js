@@ -18,6 +18,7 @@ function initializeFields() {
             countAll(field);
         });
     });
+}
 
     //Effacer le placeholder du titre à la saisie, à déclencher une seule fois, ne marche pas en l'état
     //+ désactiver les touches qui ne sont pas des lettres
@@ -25,32 +26,31 @@ function initializeFields() {
         //titreField.innerText = e.key;
     });
 
-    //Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
-    titreField.addEventListener('keyDown', (e) => {
-        console.log(e.code);
-        value = titreField.innerText;
-        if (value == "") {
-            titreField.innerText = "Titre de votre poème";
-        }
-    });
+//Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
+titreField.addEventListener('keyDown', (e) => {
+    console.log(e.code);
+    value = titreField.innerText;
+    if (value == "") {
+        titreField.innerText = "Titre de votre poème";
+    }
+});
 
-    //Empêcher saut de ligne dans le titre
-    titreField.addEventListener('keypress', (e) => {
-        console.log(e.code);
-        if (e.code === "Enter") {
-            e.preventDefault();
-        }
-    });
+//Empêcher saut de ligne dans le titre
+titreField.addEventListener('keypress', (e) => {
+    console.log(e.code);
+    if (e.code === "Enter") {
+        e.preventDefault();
+     }
+});
 
-    //Limite de caractères dans le titre
-    titreField.addEventListener('keypress', (e) => {
-        let limite = 30;
-        let titleLenght = titreField.innerText.length;
-        if (titleLenght > limite) {
-            e.preventDefault();
-        }
-    });
-}
+//Limite de caractères dans le titre
+titreField.addEventListener('keypress', (e) => {
+    let limite = 30;
+    let titleLenght = titreField.innerText.length;
+    if (titleLenght > limite) {
+        e.preventDefault();
+    }
+});
 
 //Select format
 let formats = ["Sonnet","Balade"];
@@ -317,7 +317,7 @@ function joinPoem() {
             poeme.push(fields[i].value);
         }
     }
-    poeme.unshift(titreField.innerText);
+    poeme.unshift(titreField.value);
     let poemeEntier = poeme.join(" ");
     return poemeEntier
 }

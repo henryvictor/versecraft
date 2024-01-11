@@ -3,7 +3,8 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/knopf.css/knopf.min.css">
     <title>VerseCraft</title> 
 </head> 
 <body>
@@ -11,8 +12,7 @@
     <main>
         <div id="side">
             <div>
-                <h3>Créez votre sonnet en octosyllabes</h3>
-                <p>Composez et exportez votre poème grâce à ce générateur</p>
+                <p>Personnalisez un template, rédigez et exportez votre poème</p>
             </div>
             <div>
                 <h5>Forme</h5>
@@ -26,22 +26,50 @@
             <div>
                 <h5>Police d'écriture</h5>
                 <div>
-                    <button id="toggle-sans-serif">T</button>
-                    <button id="toggle-serif">T</button>
+                    <button class="knopf" id="toggle-sans-serif">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.1953 4.89062V19.1094H10.7637V4.89062H13.1953ZM17.6582 4.89062V6.84375H6.33984V4.89062H17.6582Z" fill="currentColor"/>
+                        </svg>                            
+                    </button>
+                    <button class="knopf" id="toggle-serif">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.9502 4.7168L18.1113 8.13281H17.7031C17.6243 7.53125 17.5169 7.10156 17.3809 6.84375C17.1589 6.42839 16.8617 6.12402 16.4893 5.93066C16.124 5.73014 15.6406 5.62988 15.0391 5.62988H12.9873V16.7588C12.9873 17.654 13.084 18.2126 13.2773 18.4346C13.5495 18.7354 13.9684 18.8857 14.5342 18.8857H15.0391V19.2832H8.8623V18.8857H9.37793C9.99382 18.8857 10.4307 18.6995 10.6885 18.3271C10.846 18.098 10.9248 17.5752 10.9248 16.7588V5.62988H9.17383C8.49349 5.62988 8.01009 5.68001 7.72363 5.78027C7.35124 5.91634 7.03255 6.17773 6.76758 6.56445C6.5026 6.95117 6.34505 7.47396 6.29492 8.13281H5.88672L6.05859 4.7168H17.9502Z" fill="currentColor"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div>
                 <h5>Thème</h5>
                 <div>
-                    <button id="toggle-couleur-1"><img src="assets/darkTheme.svg"></button>
-                    <button id="toggle-couleur-2"><img src="assets/lightTheme.svg"></button>
+                    <button class="knopf" id="toggle-couleur-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12C21 11.54 20.96 11.08 20.9 10.64C19.92 12.01 18.32 12.9 16.5 12.9C13.52 12.9 11.1 10.48 11.1 7.5C11.1 5.69 11.99 4.08 13.36 3.1C12.92 3.04 12.46 3 12 3Z" fill="currentColor"/>
+                        </svg>
+                        <!--<img src="assets/darkTheme.svg" class="icon">-->
+                    </button>
+                    <button class="knopf" id="toggle-couleur-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C9.24 7 7 9.24 7 12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12C17 9.24 14.76 7 12 7ZM2 13H4C4.55 13 5 12.55 5 12C5 11.45 4.55 11 4 11H2C1.45 11 1 11.45 1 12C1 12.55 1.45 13 2 13ZM20 13H22C22.55 13 23 12.55 23 12C23 11.45 22.55 11 22 11H20C19.45 11 19 11.45 19 12C19 12.55 19.45 13 20 13ZM11 2V4C11 4.55 11.45 5 12 5C12.55 5 13 4.55 13 4V2C13 1.45 12.55 1 12 1C11.45 1 11 1.45 11 2ZM11 20V22C11 22.55 11.45 23 12 23C12.55 23 13 22.55 13 22V20C13 19.45 12.55 19 12 19C11.45 19 11 19.45 11 20ZM5.99 4.58C5.6 4.19 4.96 4.19 4.58 4.58C4.19 4.97 4.19 5.61 4.58 5.99L5.64 7.05C6.03 7.44 6.67 7.44 7.05 7.05C7.43 6.66 7.44 6.02 7.05 5.64L5.99 4.58ZM18.36 16.95C17.97 16.56 17.33 16.56 16.95 16.95C16.56 17.34 16.56 17.98 16.95 18.36L18.01 19.42C18.4 19.81 19.04 19.81 19.42 19.42C19.81 19.03 19.81 18.39 19.42 18.01L18.36 16.95ZM19.42 5.99C19.81 5.6 19.81 4.96 19.42 4.58C19.03 4.19 18.39 4.19 18.01 4.58L16.95 5.64C16.56 6.03 16.56 6.67 16.95 7.05C17.34 7.43 17.98 7.44 18.36 7.05L19.42 5.99ZM7.05 18.36C7.44 17.97 7.44 17.33 7.05 16.95C6.66 16.56 6.02 16.56 5.64 16.95L4.58 18.01C4.19 18.4 4.19 19.04 4.58 19.42C4.97 19.8 5.61 19.81 5.99 19.42L7.05 18.36Z" fill="currentColor"/>
+                        </svg>
+                        <!--<img src="assets/lightTheme.svg" class="icon">-->
+                    </button>
                 </div>
             </div>
             <div id="action-container">
                 <h5>Sauvegarder</h5>
                 <div>
-                    <button id="copy-text"><img src="assets/copy.svg"><span id="copy-text-text">Copier le texte</span></button>
-                    <button id="export-png"><img src="assets/download.svg">Exporter <span>.png</span></button>
+                    <button class="knopf" id="copy-text">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.5 1H4.5C3.4 1 2.5 1.9 2.5 3V17H4.5V3H16.5V1ZM19.5 5H8.5C7.4 5 6.5 5.9 6.5 7V21C6.5 22.1 7.4 23 8.5 23H19.5C20.6 23 21.5 22.1 21.5 21V7C21.5 5.9 20.6 5 19.5 5ZM19.5 21H8.5V7H19.5V21Z" fill="currentColor"/>
+                        </svg>                            
+                        Copier le texte
+                    </button>
+                    <button class="knopf" id="export-png">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 20H19V18H5V20ZM19 9H15V3H9V9H5L12 16L19 9Z" fill="currentColor"/>
+                        </svg>
+                        Exporter .png
+                    </button>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
@@ -57,7 +85,8 @@
             </div>
         </div>
         <div id="main">
-            <h4 id="titre-field" contenteditable="true">Titre de votre poème</h4> 
+            <!--<h4 id="titre-field" contenteditable="true">Titre de votre poème</h4>-->
+            <input type="text" id="titre-field" placeholder="Titre de votre poème">
             <div>
                 <div> 
                     <input type="text" class="text-field"> 
