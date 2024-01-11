@@ -426,6 +426,9 @@ body {
 
 .sans-serif {
     font-family: sans-serif;
+    & #titre-field {
+        font-family: sans-serif !important;
+    }
     & #titre-field::placeholder{
         font-family: sans-serif !important;
     }
@@ -433,6 +436,9 @@ body {
 
 .serif {
     font-family: serif;
+    & #titre-field {
+        font-family: serif !important;
+    }
     & #titre-field::placeholder{
         font-family: serif !important;
     }
