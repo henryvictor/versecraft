@@ -511,11 +511,58 @@ body {
     }
 }
 
-/* Iphones (à partir du X)
+/* Iphones (à partir du X)*/
 @media only screen and (min-device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
     body {
-        /*width: 100vw;*/
-        /*
+        width: 100vw;
+        padding: 0px;
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+        padding: 16px;
+        width: auto;
+        display: flex; 
+        flex-direction: row; 
+        align-items: flex-start; 
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    #main {
+        width: 100%;
+        /*height: auto;*/
+        height: fit-content;
+        padding-bottom: 24px;
+        order: 1;
+        box-sizing: border-box;
+        & #titre-field {
+            width: 90%;
+            box-sizing: border-box;
+        }
+        & >div {
+            width: 100%;
+            & >div {
+                width: 100%;
+            }
+        }
+    }
+    #side {
+        min-width: 100%;
+        height: auto;
+        order: 2;
+        box-sizing: border-box;
+        & #banner {
+            height: 0px;
+        }
+    }
+    #banner-2 {
+        display: none;
+        order: 3;
+    }
+    /*
+    body {
+        width: 100vw;
         padding: 0px;
         margin: 0px;
         font-family: Arial, Helvetica, sans-serif;
