@@ -467,11 +467,9 @@ body {
 /* Téléphones max width 375px */
 @media only screen and (max-device-width: 375px) {
     body {
-        width: 100vw;
         padding: 0px;
         margin: 0px;
         font-family: Arial, Helvetica, sans-serif;
-        background: blue;
     }
     main {
         padding: 16px;
@@ -485,7 +483,6 @@ body {
     }
     #main {
         width: 100%;
-        /*height: auto;*/
         height: fit-content;
         padding-bottom: 24px;
         order: 1;
@@ -522,7 +519,6 @@ body {
     body {
         padding: 0px;
         margin: 0px;
-        background-color: red;
         font-family: Arial, Helvetica, sans-serif;
         & main {
             padding: unset;
@@ -554,7 +550,7 @@ body {
         }
     }
     #side {
-        min-width: 100%;
+        width: 100%;
         height: auto;
         order: 2;
         box-sizing: border-box;
