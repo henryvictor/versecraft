@@ -300,9 +300,10 @@ buttonExportPng.addEventListener('click', function() {
     toggleBorders();
 
     setTimeout(() => { 
-        html2canvas(main, allowTaint=false, backgroundColor=null).then(function(canvas) {
+        html2canvas(exportZone, allowTaint=false, backgroundColor=null).then(function(canvas) {
             saveAs(canvas.toDataURL(), 'poème.png');
             toggleBorders();
+            console.log(canvas);
         }) 
     }, 1000);
 });
@@ -310,7 +311,7 @@ buttonExportPng.addEventListener('click', function() {
 function toggleBorders() {
     fields.forEach(field => {
         field.classList.toggle("no-border");
-        console.log(field.classList);
+        console.log("toggleBorders working");
     });
 }
 
@@ -341,11 +342,11 @@ const buttonCopyText = document.getElementById('copy-text-text');
 buttonCopy.addEventListener('click', () => {
     poemeEntier = joinPoem();
     navigator.clipboard.writeText(poemeEntier);
-    
+    /*
     buttonCopyText.innerText = "Texte copié !";
     setTimeout(() => {
         buttonCopyText.innerText = 'Copier le texte';
-    }, 1000);
+    }, 1000);*/
 });
 
 

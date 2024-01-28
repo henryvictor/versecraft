@@ -85,13 +85,28 @@ body {
     & #banner-2 {
         height: 92vh;
         box-sizing: border-box;
-        flex-grow: 1;
+        width: 300px;
+        /*flex-grow: 1;*/
         border-radius: 2px;
         background-color: var(--dark-primary-bg-color);
         border: 1px solid var(--dark-border);
+        color: var(--dark-text-secondary-color);
+        overflow-y: hidden;
+        & >div {
+            padding: 24px 16px 24px 16px;
+            width: 100%;
+            height: 40px;
+        }
+        & h5 {
+            margin: 0px;
+        }
         & #banner-content {
-            width: 200px;
+            padding: 0px 16px 24px 16px;
+            min-width: min-content;
+            max-width: 100%;
             height: 100vh;
+            overflow-y: hidden;
+            animation: marquee 5s linear infinite;
         }
     }
     & #side {
@@ -216,7 +231,8 @@ body {
             color: var(--dark-text-primary-color);
         }
         & #titre-field {
-            max-width: 100%;
+            /*field-sizing: content; Activer à la sortie de la feature*/
+            width: calc(100% - 48px);
             background-color: transparent;
             margin: 0px;
             font-size: var(--h3);
@@ -507,7 +523,7 @@ body {
         padding: 16px;
         width: auto;
         display: flex; 
-        flex-direction: row; 
+        flex-direction: column; 
         align-items: flex-start; 
         justify-content: center;
         flex-wrap: wrap;
@@ -530,7 +546,7 @@ body {
         }
     }
     #side {
-        min-width: calc(100vw - 32px);
+        min-width: calc(100%);
         /*height: auto;*/
         min-height: fit-content;
         order: 2;
@@ -563,3 +579,8 @@ body {
 @media only screen and (min-width: 1200px) {
 
 }
+
+@keyframes marquee {
+    0% { top: 0; }
+    100% { top: -100%; }
+  }
