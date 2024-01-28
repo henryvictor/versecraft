@@ -551,7 +551,7 @@ body {
     }
     #side {
         width: 100%;
-        height: auto;
+        height: fit-content;
         order: 2;
         box-sizing: border-box;
         & #banner {
