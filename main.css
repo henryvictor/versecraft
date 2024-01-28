@@ -607,8 +607,8 @@ body {
     #banner-2 {
         display: none;
         order: 3;
-    }
-}*/
+    }*/
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -633,4 +633,4 @@ body {
 @keyframes marquee {
     0% { top: 0; }
     100% { top: -100%; }
-  }
+}
