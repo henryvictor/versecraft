@@ -511,10 +511,11 @@ body {
     }
 }
 
-/* Iphones (à partir du X) */
+/* Iphones (à partir du X)
 @media only screen and (min-device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
     body {
         /*width: 100vw;*/
+        /*
         padding: 0px;
         margin: 0px;
         font-family: Arial, Helvetica, sans-serif;
@@ -547,7 +548,7 @@ body {
     }
     #side {
         width: calc(100vw - 32px);
-        min-height: fit-content;
+        max-height: fit-content;
         order: 2;
         background-color: red;
         & #banner {
@@ -558,7 +559,7 @@ body {
         display: none;
         order: 3;
     }
-}
+}*/
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
