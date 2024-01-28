@@ -71,7 +71,10 @@ body {
         background-color: var(--dark-main-bg-color);
     }
     & main {
-        padding: 40px 96px;
+        padding-top: 40px;
+        padding-left: 96px;
+        padding-right: 96px;
+        padding-bottom: 40px;
         display: flex; 
         flex-direction: row; 
         align-items: flex-start; 
@@ -467,6 +470,7 @@ body {
         padding: 0px;
         margin: 0px;
         font-family: Arial, Helvetica, sans-serif;
+        background: blue;
     }
     main {
         padding: 16px;
@@ -515,22 +519,20 @@ body {
 /*@media only screen and (min-device-width: 375px) and (-webkit-device-pixel-ratio: 2) {*/
 @media only screen and (min-device-width: 375px) and (max-device-width: 2688px) and (-webkit-device-pixel-ratio: 3) {
     body {
-        /*width: 100vw;*/
-        width: auto;
         padding: 0px;
         margin: 0px;
         background-color: red;
         font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-        padding: 16px;
-        width: auto;
-        display: flex; 
-        flex-direction: row; 
-        align-items: flex-start; 
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 24px;
+        & main {
+            padding: unset;
+            padding: 16px;
+            display: flex; 
+            flex-direction: row; 
+            align-items: flex-start; 
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
     }
     #main {
         width: 100%;
