@@ -546,8 +546,7 @@ body {
         }
     }
     #side {
-        min-width: calc(100%);
-        /*height: auto;*/
+        width: calc(100vw - 32px);
         min-height: fit-content;
         order: 2;
         & #banner {
