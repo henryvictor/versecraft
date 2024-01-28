@@ -71,10 +71,11 @@ body {
         background-color: var(--dark-main-bg-color);
     }
     & main {
-        padding-top: 40px;
+        /* padding-top: 40px;
         padding-left: 96px;
         padding-right: 96px;
-        padding-bottom: 40px;
+        padding-bottom: 40px; */
+        padding: 16px;
         display: flex; 
         flex-direction: row; 
         align-items: flex-start; 
