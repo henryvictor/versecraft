@@ -362,7 +362,7 @@ select {
       }
 }
   
-    select:focus + .focus {
+    /* select:focus + .focus {
         position: absolute;
         top: -1px;
         left: -1px;
@@ -370,7 +370,7 @@ select {
         bottom: -1px;
         border: 2px solid var(--select-focus);
         border-radius: inherit;
-    }
+    } */
   
   select[multiple] {
     padding-right: 0;
