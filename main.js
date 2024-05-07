@@ -123,7 +123,7 @@ selectFormat.addEventListener('change', function () {
                 <input type="text" class="text-field"> 
                 <span class="count">0</span>
             </div>
-            </div>`;
+        </div>`;
 
             initializeFields();
     }
@@ -146,9 +146,156 @@ selectFormat.addEventListener('change', function () {
             <div> 
                 <input type=\"text\" class=\"text-field\"> 
                 <span class=\"count\">0</span>
-            </div>`;
+            </div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+        </div>
+        
+        <div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+        </div>
+        
+        <div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+        </div>
+        
+        <div>
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div> 
+            <div> 
+                <input type=\"text\" class=\"text-field\"> 
+                <span class=\"count\">0</span>
+            </div>
+        </div>`;
 
             initializeFields();
+    }
+    if (this.selectedIndex == 2) {
+        console.log("haïku sélectionné");
+        main.innerHTML = `
+        <div>
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+            <div> 
+                <input type="text" class="text-field"> 
+                <span class="count">0</span>
+            </div> 
+        </div>`;
+
+            initializeFields();
+    }
+});
+
+//Toggle spellcheck
+const spellCheckCheckbox = document.getElementById('toggle-spellcheck');
+spellCheckCheckbox.addEventListener('change', () => {
+    if (spellCheckCheckbox.checked) {
+        for (const item in textFields) {
+            textFields[item].setAttribute('spellcheck', 'true');
+            tempValue = textFields[item].value
+            textFields[item].value = ""
+            textFields[item].value = tempValue
+        }
+    }
+    else {
+        for (const item in textFields) {
+            textFields[item].setAttribute('spellcheck', 'false');
+            tempValue = textFields[item].value
+            textFields[item].value = ""
+            textFields[item].value = tempValue
+        }
     }
 });
 

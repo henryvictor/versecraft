@@ -25,7 +25,7 @@
     --light-field-hover-color: rgba(0, 0, 0, 0.04);
     --light-field-focus-color: rgba(0, 0, 0, 0.05);
     --light-text-primary-color: rgb(27, 27, 27);
-    --light-text-secondary-color: rgb(188, 188, 188, 0.9);
+    --light-text-secondary-color: rgba(150, 150, 150, 0.9);
     --light-text-tertiary-color: rgba(188, 188, 188, 0.698);
     --light-border-primary-color: rgb(188, 188, 188);
     --light-border: hsl(220 13% 91%);
@@ -123,7 +123,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 24px;
+        gap: 4px;
         min-width: 265px;
         max-width: 100%;
         height: 92vh;

@@ -17,12 +17,13 @@
             </div> -->
             <div>
                 <!-- <h5>Forme</h5> -->
-                <label>Sélection de format</label>
+                <h5>Sélection de format</h5>
                 <label>
                 <div class="select">
                     <select id="select-format">
                         <option value="Sonnet">Sonnet</option>
                         <option value="Balade">Balade</option>
+                        <option value="Haïku">Haïku</option>
                     </select>
                     <span class="focus"></span>
                 </div>
@@ -30,7 +31,7 @@
             </div>
             <div>
                 <!-- <h5>Syllabes</h5> -->
-                <label>Nombre de syllabes</label>
+                <h5>Nombre de syllabes</h5>
                 <div>
                     <button class="knopf" id="syllabes8">
                         <svg width="23" height="24" viewBox="0 0 23 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +54,7 @@
             </div>
             <div>
                 <!-- <h5>Police d'écriture</h5> -->
-                <label>Police d'écriture</label>
+                <h5>Police d'écriture</h5>
                 <div>
                     <button class="knopf" id="toggle-sans-serif">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +70,7 @@
             </div>
             <div>
                 <!-- <h5>Thème</h5> -->
-                <label>Thème de l'éditeur</label>
+                <h5>Thème de l'éditeur</h5>
                 <div>
                     <button class="knopf" id="toggle-couleur-1">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -85,9 +86,16 @@
                     </button>
                 </div>
             </div>
+            <div>
+                <h5>Correcteur orthographique</h5>
+                <div>
+                    <input type="checkbox" id="toggle-spellcheck" checked>
+                    <label for="toggle-spellcheck">Activer</label>
+                </div>
+            </div>
             <div id="action-container">
                 <!-- <h5>Sauvegarder</h5> -->
-                <label>Export texte & image</label>
+                <h5>Export texte & image</h5>
                 <div>
                     <button class="knopf" id="copy-text">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -105,16 +113,20 @@
                 </div>
             </div>
             <div>
-                <h5>Réseaux</h5>
+                <!-- Partage -->
+                <h5>Partage</h5>
+                <p>Work In Progress</p>
+                <!--
                 <div>
                     <a href="https://twitter.com/intent/tweet?button_hashtag=post&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" id="tweetButton" data-size="large" data-text="Devenez poètes et poétesses sur henryvictor.github.io/versecraft #verseCraft" data-related="corbosieu" data-dnt="true" data-show-count="false">Tweet</a>
-                </div>
+                </div>-->
             </div>
+            <!--
             <dialog>
-                <h5>Titre de la modale</h5>
-                <p>Contenu de la modale</p>
+                <h5>Titre</h5>
+                <p>Contenu</p>
                 <button>Test</button>
-            </dialog>
+            </dialog>-->
             <div id="banner">
 
             </div>
@@ -184,6 +196,7 @@
                 </div> 
             </div>
         </div>
+        <!--
         <div id="banner-2">
             <div>
                 <h5>Contributions récentes</h5>
@@ -229,7 +242,7 @@
                     Tranquille. Il a deux trous rouges au côté droit.
                 </p>
             </div>
-        </div>
+        </div> -->
     </main>
 </body> 
 <script src="main.js"></script>
