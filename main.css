@@ -647,6 +647,14 @@ label {
     }
 }
 
+/* Pour les petits écrans */
+@media only screen and (max-device-width: 1366px) {
+    #banner-2 {
+        background-color: red;
+        display: none;
+    }
+}
+
 /* Téléphones max width 375px */
 @media only screen and (max-device-width: 375px) {
     body {
