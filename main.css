@@ -102,6 +102,7 @@ body {
         }
     }
     & #banner-2 {
+        display: none;
         height: calc(100vh - 40px);
         position: sticky;
         top: 10px;
@@ -112,7 +113,7 @@ body {
         background-color: var(--dark-primary-bg-color);
         border: 1px solid var(--dark-border);
         color: var(--dark-text-secondary-color);
-        /*overflow-y: scroll;*/
+        overflow-y: scroll;
         overflow-y: hidden;
         & >div {
             padding: 24px 24px 16px 24px;
@@ -137,7 +138,7 @@ body {
                 align-items: flex-start;
                 gap: 16px;
                 & p {
-                    font-size: 0.9rem;
+                    font-size: 0.85rem;
                     opacity: 90%;
                     margin: unset;
                 }
@@ -650,8 +651,8 @@ label {
 /* Pour les petits écrans */
 @media only screen and (max-device-width: 1366px) {
     #banner-2 {
-        background-color: red;
         display: none;
+        order: 3;
     }
 }
 
