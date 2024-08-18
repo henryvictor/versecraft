@@ -22,11 +22,18 @@ function initializeFields() {
     });
 }
 
-    //Effacer le placeholder du titre à la saisie, à déclencher une seule fois, ne marche pas en l'état
-    //+ désactiver les touches qui ne sont pas des lettres
-    titreField.addEventListener('keydown', (e) => {
-        //titreField.innerText = e.key;
-    });
+//Afficher bouton de validation du titre lorsque le champ est en focus
+let confirmTitleButton = document.getElementById("confirm-title-button");
+titreField.addEventListener('input', (e) => {
+    confirmTitleButton.style.display = "flex";
+    confirmTitleButton.addEventListener('click', (e) => {
+        titreField.blur();
+        confirmTitleButton.style.display = "none";
+    })
+    titreField.addEventListener('focusout', (e) => {
+        confirmTitleButton.style.display = "none";
+    })
+});
 
 //Remettre le placeholder si le titre est vide quand on quitte l'édition ne marche pas en l'état
 titreField.addEventListener('keyDown', (e) => {

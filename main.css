@@ -307,6 +307,25 @@ body {
         background-color: var(--dark-primary-bg-color);
         box-sizing: border-box;
         border: 1px solid var(--dark-border);
+        & >div:nth-child(1) {
+            width: 100%;
+            height: 46px;
+            position: relative;
+            & #confirm-title-button {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: calc(100% - 40px);
+                top: 4px;
+                border-radius: 100px;
+                padding-top: 4px;
+                padding-right: 4px;
+                padding-bottom: 4px;
+                padding-left: 4px;
+            }
+        }
         & h4 {
             margin: 0px;
             font-size: var(--h3);
@@ -349,7 +368,7 @@ body {
             outline: none;
             border: 1px solid var(--dark-text-primary-color);
         }
-        & >div {
+        & >div:nth-child(2) {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -361,6 +380,7 @@ body {
                 align-items: center;
                 justify-content: flex-start;
                 gap: 8px;
+            }
             & .text-field {
                 all: unset;
                 width: 450px;
@@ -371,11 +391,17 @@ body {
                 color: var(--dark-text-primary-color);
                 border-bottom: 1px solid var(--dark-border-primary-color);
             }
-            & >input:hover {
+            & input:hover {
                 background-color: var(--dark-field-hover-color);
             }
-            & >input:focus {
+            & input:focus {
                 background-color: var(--dark-field-hover-color);
+            }
+            & input:focus + span {
+                opacity: 1;
+            }
+            & input:hover + span {
+                opacity: 1;
             }
             & span {
                 display: block;
@@ -384,15 +410,8 @@ body {
                 color: var(--dark-text-primary-color);
                 transition: 0.2s ease-in;
             }
-            }
         }
-    & input:focus + span {
-        opacity: 1;
     }
-    & input:hover + span {
-        opacity: 1;
-    }
-}
 
 select {
     appearance: none;
@@ -536,6 +555,9 @@ label {
         background-color: var(--light-secondary-bg-color);
         box-sizing: border-box;
         border: 1px solid var(--light-border);
+        & >div:nth-child(1) {
+            width: 100%;
+        }
         & h4 {
             color: var(--light-text-primary-color);
             border: 1px solid rgba(255, 255, 255, 0);
@@ -571,7 +593,7 @@ label {
         & #titre-field:focus::placeholder {
             color: var(--light-text-tertiary-color);
         }
-        & >div {
+        & >div:nth-child(2) {
             & >div {
             & .text-field {
                 all: unset;
