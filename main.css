@@ -209,7 +209,7 @@ body {
         min-width: 265px;
         max-width: 100%;
         height: calc(100vh - 40px);
-        padding: 24px 24px 24px 24px;
+        padding: 24px 24px 16px 24px;
         border-radius: 2px;
         background-color: var(--dark-primary-bg-color);
         color: var(--dark-text-primary-color);
@@ -273,6 +273,28 @@ body {
                 row-gap: 8px;
                 column-gap: 8px;
             }
+        }
+        & >div:has(>a) {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+        & #twitter-link {
+            align-self: flex-end;
+            color: var(--dark-text-secondary-color);
+            font-size: 0.7rem;
+            text-decoration: none;
+            vertical-align: baseline;
+            & svg {
+                width: 12px;
+                height: 12px;
+                fill: currentColor;
+            }
+        }
+        & #twitter-link:visited {
+            color: var(--dark-text-secondary-color);
         }
         & #banner {
             height: 92vh;
@@ -549,6 +571,12 @@ label {
             & button {
                 padding: 8px 12px 8px 12px;
             }
+        }
+        & #twitter-link {
+            color: var(--light-text-secondary-color);
+        }
+        & #twitter-link:visited {
+            color: var(--light-text-secondary-color);
         }
     }
     & #main {
